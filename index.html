@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAY HELLO</title>
+</head>
+
+<body>
+    <div id="map">
+    </div>
+
+    <script>
+        navigator.geolocation.getCurrentPosition(position => {
+            const { latitude, longitude } = position.coords;
+            console.log(latitude,longitude);
+            
+            document.getElementById('map').innerHTML = '<iframe src="https://maps.google.com/maps?q=' + latitude + ',' + longitude + '&amp;z=15&amp;output=embed" width="600" height="450" style="border:0;" loading="lazy" title="Google Map"></iframe>';
+        },
+        error => {
+            console.error("Geolocation error:", error.message);
+            alert("Unable to retrieve location: " + error.message);
+        });
+
+    </script>
+</body>
+
+</html>
