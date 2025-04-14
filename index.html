@@ -59,12 +59,9 @@
           console.log("Accuracy (meters):", accuracy);
 
           document.getElementById('map-container').innerHTML = `
-            <iframe
-              src="https://maps.google.com/maps?q=${latitude},${longitude}&z=15&output=embed"
-              allowfullscreen
-              loading="lazy"
-              title="Google Map">
-            </iframe>`;
+            <iframe src="https://maps.google.com/maps?q=${latitude},${longitude}&z=15&output=embed" 
+                        width="600" height="450" style="border:0;" loading="lazy" title="Google Map">
+                    </iframe>`;
 
           document.getElementById('info').innerText = 
             `Latitude: ${latitude.toFixed(5)}, Longitude: ${longitude.toFixed(5)} (±${Math.round(accuracy)} meters)`;
